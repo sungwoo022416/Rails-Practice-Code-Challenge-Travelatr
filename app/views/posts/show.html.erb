@@ -1,0 +1,12 @@
+<h1> Post Profile </h1>
+
+<ul>
+    <li><strong>Ttile: </strong><%= @post.title %> || <%= @post.likes %></li><br>
+    <li><strong>Content: </strong><%= @post.content %></li><br>
+
+   
+    <li><strong>Blogger: </strong><%= link_to @post.blogger.name, blogger_path(@post.blogger) %></li><br>
+    <li><strong>Destination: </strong><%= link_to @post.destination.name, destination_path(@post.destination) %></li><br>
+    
+    <%= button_to 'Like!', like_post_path(@post) %>
+</ul>

@@ -1,0 +1,15 @@
+<h1> Destination Profile </h1>
+
+<ul>
+    <li><strong>Name: </strong><%= @destination.name %></li><br>
+    <li><strong>Country: </strong><%= @destination.country %></li><br>
+
+   
+    <li><strong>Recent_Posts: </strong><%= @destination.recent_posts %></li>
+    <li><strong>Blogger_Average_Age: </strong><%= @destination.average_age %></li>
+    
+    
+    <% if @destination.featured_post %>
+    <li><strong>Featured_post: </strong><%= link_to @destination.featured_post, post_path(@destination.featured_post)%></li><br>
+   <% end %>
+</ul>

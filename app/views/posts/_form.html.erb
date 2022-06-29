@@ -1,0 +1,40 @@
+
+    <% if flash[:errors] %>
+    <ul>
+        <% flash[:errors].each do |error| %>
+           <li> <%= error %> </li>
+        <% end %>
+    </ul>
+    <% end %>
+
+
+<%= form_for @post do |f| %>
+    <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+    </div>
+
+    <div class="field">
+    <%= f.label :likes %>
+    <%= f.number_field :likes %>
+    </div>
+
+    <div class="field">
+    <%= f.label :blogger_id %>
+    <%= f.collection_select :blogger_id, Blogger.all, :id, :name %>
+    </div>
+
+    <div class="field">
+    <%= f.label :destination_id %>
+    <%= f.collection_select :destination_id, Destination.all, :id, :name %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit %>
+    </div>
+<% end %>

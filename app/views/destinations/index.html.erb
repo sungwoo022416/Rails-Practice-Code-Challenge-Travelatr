@@ -1,0 +1,7 @@
+<h1> Destination List </h1>
+
+<ul>
+    <% @destinations.each do |destination| %>
+    <li><%= destination.name %> | <%= destination.country %></li><br>
+    <% end %>
+</ul>
